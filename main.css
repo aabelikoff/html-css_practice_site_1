@@ -1,0 +1,557 @@
+@font-face {
+  font-family: 'Metropolis-Regular';
+  src: url(./assets/fonts/Metropolis-Regular.otf);
+}
+
+@font-face {
+  font-family: 'Metropolis-SemiBold';
+  src: url(./assets/fonts/Metropolis-SemiBold.otf);
+}
+
+@font-face {
+  font-family: 'Metropolis-Bold';
+  src: url(./assets/fonts/Metropolis-Bold.otf);
+}
+
+/* Rotating element around its center */
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Metropolis-Bold';
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Metropolis-Regular';
+}
+
+.button-primary {
+  background: #722ed1;
+  color: white;
+}
+
+.button-secondary {
+  background: white;
+  color: #722ed1;
+}
+
+.rounded-element {
+  border-radius: 23px;
+  height: 38px;
+  padding: 12px 24px;
+}
+
+.squared-element {
+  height: 38px;
+  padding: 12px 24px;
+}
+
+.outlined-purple-element {
+  border: 1px solid #722ed1;
+  color: #722ed1;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 20px;
+  font-family: 'Metropolis-Regular';
+}
+
+header .header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+}
+
+header nav {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+/* To choose all elements in header nav Всі елементи в наві*/
+header nav * {
+  margin: 20px;
+  font-size: 14px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #000;
+  position: relative; /*To add an arrow after menu item*/
+}
+/* Adds an arrow to menu item */
+header nav a:hover::after {
+  content: url('./images/arrow-down.png');
+  margin-left: 4px;
+  position: absolute;
+  top: -1px;
+}
+
+#tag {
+  background: #f7f1ff;
+  padding: 8px 16px;
+  width: 250px;
+  height: 30px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#tag img {
+  margin-right: 12px;
+}
+/* !!! Added by myself with tag a in html */
+#tag a {
+  color: #000;
+  text-decoration: underline solid #722ed1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .hero-section {
+  background: url(./images/hero-background.png) no-repeat;
+  background-size: 120% 100%;
+  background-position: -190px 0px;
+  padding-bottom: 100px; /* !!! Added by me because template has bigger height, so background fits hero-section*/
+}
+
+main .hero-wrapper,
+main .qubly-wrapper,
+main .testimonials-wrapper,
+main .sign-up-wrapper {
+  width: 70%;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+}
+
+main .hero-wrapper .flex-column {
+  width: 50%;
+  gap: 34px;
+}
+
+main .hero-wrapper .flex-column p,
+main .qubly-wrapper p,
+main .product-teams-wrapper p,
+main .engineering-teams-wrapper p,
+main .sign-up-wrapper p {
+  font-size: 16px;
+  color: #8989a2;
+  font-family: 'Metropolis-Regular';
+  line-height: 24px;
+}
+main .hero-wrapper .flex-column .buttons-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+/*Qubly */
+.qubly-wrapper {
+  gap: 24px;
+}
+
+.qubly-wrapper p,
+.qubly-wrapper h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.tags {
+  background: #f7f1ff;
+  padding: 8px 16px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Metropolis-Regular';
+}
+
+#qubly-tag {
+  width: 160px;
+  height: 30px;
+  color: #722ed1;
+}
+
+#qubly-tag img {
+  margin-right: 12px;
+}
+
+.features {
+  display: flex;
+  gap: 16px;
+}
+
+.features-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.round-pic {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: #fff1f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*For product teams */
+.product-teams-wrapper,
+.engineering-teams-wrapper {
+  margin-top: 120px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-teams-wrapper {
+  gap: 80px;
+}
+
+#product-teams-tag {
+  width: 180px;
+  height: 30px;
+  color: #722ed1;
+}
+
+#product-teams-tag img {
+  margin-right: 14px;
+}
+
+.features-item-left {
+  align-items: flex-start;
+}
+
+.product-teams-wrapper .features-item-left {
+  gap: 24px;
+}
+/* Engineering teams */
+.engineering-teams-wrapper .flex-column {
+  width: 46%;
+}
+
+.engineering-teams-wrapper .features-item-left {
+  gap: 24px;
+  width: 54%;
+}
+
+#engineering-teams-tag {
+  width: 210px;
+  height: 30px;
+  color: #722ed1;
+}
+
+#engineering-teams-tag img {
+  margin-right: 14px;
+}
+/* Testimonials section */
+.testimonials-section {
+  padding: 200px 0;
+  background: url(./images/testimonials-background.png) no-repeat;
+  background-size: cover;
+}
+
+.testimonials-wrapper {
+  margin-top: 20px;
+  gap: 32px;
+}
+
+.testimonials-wrapper blockquote {
+  font-family: 'Metropolis-Regular';
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+}
+
+#author {
+  font-family: 'Metropolis-Bold';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.testimonials-wrapper hr {
+  border: 1px solid #dec9fa;
+  width: 100%;
+}
+
+.client-logos {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: space-between;
+}
+/* Sign-up section */
+.sign-up-wrapper {
+  gap: 46px;
+  justify-content: space-between;
+}
+
+.sign-up-wrapper > div {
+  width: 35%;
+}
+
+.sign-up-wrapper > .form-wrapper {
+  width: 45%;
+}
+
+.sign-up-wrapper > .flex-column {
+  gap: 50px;
+  justify-content: flex-start;
+}
+
+.sign-up-wrapper .features-item hr {
+  border: 1px solid #d6d6d6;
+  width: 100%;
+}
+
+.sign-up-wrapper .client-logos {
+  width: fit-content;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+/* Adding animation to React logo */
+#react-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: 50% 50%;
+  animation-name: rotation;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+
+.sign-up-wrapper .client-logos div {
+  margin-bottom: 50px;
+}
+
+#google-sign {
+  width: 200px;
+  height: 48px;
+  background: url(./images/btn_google_signin_dark_normal_web@2x.png) no-repeat;
+  background-size: cover;
+}
+
+.form-wrapper {
+  background: #f9f0ff;
+  height: fit-content;
+  padding: 0 26px 28px;
+  position: relative;
+}
+
+.form-container {
+  padding: 32px 42px;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 4px 4px 12px rgba(137, 137, 162, 0.122);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.form-container h3,
+.form-container .buttons-wrapper,
+.form-container input {
+  width: 100%;
+  text-align: center;
+}
+
+.form-container h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.form-container .buttons-wrapper .button-primary {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  height: 48px;
+}
+
+.form-container input {
+  box-sizing: border-box;
+  height: 38px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 16px;
+  font-family: 'Metropolis-Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: left;
+  color: #8989A2;
+}
+
+.form-container input:focus,
+.form-container input:focus-visible,
+.form-container input:active {
+  border: 1px solid #722ed1;
+}
+
+#account-exists {
+  font-family: 'Metropolis-Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  color: #8989a2;
+}
+
+#account-exists a {
+  text-decoration: none;
+  color: #722ed1;
+}
+/* Footer */
+footer {
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  font-family: 'Metropolis-Regular';
+  background: #fbfcff;
+}
+
+footer .footer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.footer-links {
+  margin-top: 58px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 40px;
+  font-family: 'Metropolis-Regular';
+  color: #160637;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.links-group {
+  width: fit-content;
+}
+
+.footer-links div:first-child {
+  max-width: 20%;
+  line-height: 20px;
+}
+
+#social-media-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.links-group h3 {
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.links-group ul {
+  padding: 0;
+  margin: 0;
+}
+
+.links-group ul li {
+  list-style-type: none;
+}
+
+.links-group ul li a {
+  text-decoration: none;
+  color: #160637;
+}
+
+#news-email {
+  box-sizing: border-box;
+  width: 180px;
+  height: 40px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 2px 2px 2px 2px #f3ebf7;
+  padding: 16px;
+  font-family: 'Metropolis-Regular';
+  font-size: 12px;
+  background: url('./images/Icon-send.png') no-repeat;
+  background-position: 154px center;
+}
+
+#news-email:focus,
+#news-email:focus-visible,
+#news-email:active {
+  border: 1px solid #722ed1;
+}
+
+#copyright {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin: 60px 0 23px 0;
+  width: 30%;
+}
+
+#copyright span {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: 'Metropolis-Bold';
+}
